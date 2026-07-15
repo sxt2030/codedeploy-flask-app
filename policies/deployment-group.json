@@ -1,0 +1,28 @@
+{
+  "applicationName": "cmtr-1p79zixy-app",
+  "deploymentGroupName": "cmtr-1p79zixy-dg",
+  "serviceRoleArn": "arn:aws:iam::825765389438:role/cmtr-1p79zixy-codedeploy-role",
+  "autoScalingGroups": ["cmtr-1p79zixy-stack-AutoScalingGroup-sZEKnHNAi2De"],
+  "deploymentStyle": {
+    "deploymentType": "BLUE_GREEN",
+    "deploymentOption": "WITH_TRAFFIC_CONTROL"
+  },
+  "blueGreenDeploymentConfiguration": {
+    "terminateBlueInstancesOnDeploymentSuccess": {
+      "action": "TERMINATE",
+      "terminationWaitTimeInMinutes": 5
+    },
+    "deploymentReadyOption": {
+      "actionOnTimeout": "CONTINUE_DEPLOYMENT"
+    },
+     "greenFleetProvisioningOption": {
+      "action": "COPY_AUTO_SCALING_GROUP"
+    }
+  },
+  "loadBalancerInfo": {
+    "targetGroupInfoList": [
+      { "name": "cmtr-1p79zixy-tg" }
+    ]
+  },
+  "deploymentConfigName": "CodeDeployDefault.AllAtOnce"
+}

@@ -1,0 +1,16 @@
+{
+  "applicationName": "cmtr-1p79zixy-app",
+  "currentDeploymentGroupName": "cmtr-1p79zixy-dg",
+  "blueGreenDeploymentConfiguration": {
+    "terminateBlueInstancesOnDeploymentSuccess": {
+      "action": "TERMINATE",
+      "terminationWaitTimeInMinutes": 5
+    },
+    "deploymentReadyOption": {
+      "actionOnTimeout": "CONTINUE_DEPLOYMENT"
+    },
+    "greenFleetProvisioningOption": {
+      "action": "COPY_AUTO_SCALING_GROUP"
+    }
+  }
+}
